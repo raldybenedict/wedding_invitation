@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Raldy Benedict & Angelica Libriana Soewito</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F8F5F2; /* Soft beige background */
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+        /* Style for the background video */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            object-fit: cover; /* Cover the entire screen */
+            filter: brightness(0.4); /* Darken the video to make text readable */
+        }
+        /* Add a subtle overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        /* Custom animation for fade-in effect */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        /* Simple spinner for loading states */
+        .spinner {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(200,200,200,0.3);
+            border-top-color: #78350f; /* amber-900 */
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 1. Background Video -->
+    <video autoplay muted loop id="bg-video">
+        <source src="https://res.cloudinary.com/drmpxikjj/video/upload/v1758429636/Wedding_Video_by_Ola_hik8nm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center text-white text-center p-4">
+        <div class="overlay"></div>
+        <div class="relative z-10 fade-in">
+            <h3 class="text-2xl md:text-3xl font-light tracking-wider">THE WEDDING OF</h3>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl my-4 font-serif text-shadow">
+                Benedict & Angelica
+            </h1>
+            <p class="text-xl md:text-2xl">
+                We are Married!
+            </p>
+            <div class="mt-8 border-t border-b border-white/50 py-4 px-8 inline-block">
+                <!-- EDIT DATE -->
+                <p class="text-2xl tracking-widest">10.11.2025</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative bg-white/95 backdrop-blur-sm z-10">
+        <!-- Countdown Section -->
+        <section class="py-20 text-center bg-stone-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Counting Down The Days</h2>
+                <div id="countdown" class="flex justify-center space-x-4 md:space-x-8 mt-8 text-amber-800">
+                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
+                        <span id="days" class="text-4xl font-bold">00</span>
+                        <span class="block text-sm">Days</span>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
+                        <span id="hours" class="text-4xl font-bold">00</span>
+                        <span class="block text-sm">Hours</span>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
+                        <span id="minutes" class="text-4xl font-bold">00</span>
+                        <span class="block text-sm">Minutes</span>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
+                        <span id="seconds" class="text-4xl font-bold">00</span>
+                        <span class="block text-sm">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Opening Greeting -->
+        <section class="py-20 text-center">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h3 class="text-3xl font-serif italic text-gray-600 mb-6">"And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</h3>
+                <p class="text-lg text-gray-500">(Ar-Rum: 21)</p>
+            </div>
+        </section>
+
+        <!-- 2. Prewedding Photos -->
+        <section id="gallery" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-serif text-center text-amber-900 mb-12">Our Moments</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/Xq1rfnw7/RED_9703.jpg" alt="Prewedding Photo 1" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg col-span-1 md:col-span-2"><img src="https://i.postimg.cc/BbVr5ztG/RED-0634-2.jpg" alt="Prewedding Photo 2" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/JhL9QZ7t/RED-0718.jpg" alt="Prewedding Photo 3" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg col-span-1 md:col-span-2"><img src="https://i.postimg.cc/brhT7HM2/RED_1338-2.jpg" alt="Prewedding Photo 4" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/3rX9gV4j/RED_1574.jpg" alt="Prewedding Photo 5" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/DZMh50YD/RED_9839-2.jpg" alt="Prewedding Photo 6" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Prewedding Video -->
+        <section id="video" class="py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-12">Our Story</h2>
+                <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden">
+                    <iframe src="https://player.vimeo.com/video/947708290?h=5e6e301980" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Location, Schedule, Google Maps -->
+        <section id="details" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-serif text-center text-amber-900 mb-12">Event Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Ceremony -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-3xl font-serif text-amber-800 mb-4">Holy Matrimony</h3>
+                        <p class="text-lg font-semibold">Saturday, 15 November 2025</p>
+                        <p class="text-gray-600 mb-4">10:00 - 12:00 WIB</p>
+                        <p class="font-bold">St Bernadet Church, Graha Raya</p>
+                        <p class="text-gray-600">Jl. Boulevard Graha Raya No.Kav.12, RT.007/RW.004, Sudimara Pinang, Kec. Pinang, Kota Tangerang, Banten 15145</p>
+                        <div class="mt-6 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2556581933063!2d106.68355057470238!3d-6.229988061011154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa2fa6d43e17%3A0xf49ef5a544f80bc0!2sGereja%20Katolik%20Paroki%20Santa%20Bernadet%2C%20Pinang!5e0!3m2!1sid!2sid!4v1758433285130!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <!-- Reception -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-3xl font-serif text-amber-800 mb-4">Reception</h3>
+                        <p class="text-lg font-semibold">Saturday, 15 November 2025</p>
+                        <p class="text-gray-600 mb-4">18:00 - 20:00 WIB</p>
+                        <p class="font-bold">Leviticus 11</p>
+                        <p class="text-gray-600">Jl. Penyelesaian Tomang II No.1 Blok 11, Meruya Utara, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11620</p>
+                        <div class="mt-6 rounded-lg shadow-md overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5073789852086!2d106.72208687470194!3d-6.196588460705639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f72147b8a23f%3A0xf98d008933f7469f!2sLeviticus%2011!5e0!3m2!1sid!2sid!4v1758432907634!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- ✨ GEMINI API FEATURE: DRESS CODE ADVISOR -->
+                <div class="text-center mt-8 max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-lg font-semibold">Dress Code: Formal Attire</p>
+                    <p class="text-gray-600 text-sm mb-3">Confused about what to wear? Get some tips!</p>
+                    <button id="dress-code-btn" class="inline-block bg-amber-700 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-800 transition-colors duration-300 text-sm">
+                        ✨ Get Dress Code Advice
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. RSVP & AI Wish Generator -->
+        <section id="rsvp" class="py-20">
+            <div class="container mx-auto px-4 max-w-2xl text-center">
+                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Are You Attending?</h2>
+                <p class="text-gray-600 mb-8">Please RSVP by 15 October 2025 to let us know you're coming.</p>
+                
+                <form id="rsvp-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiAbCkVQWpGx9i7Ws1HvIYWlkpFJ9Itu6M_9-bNNBWa0xByQ/formResponse" method="POST" target="_blank" class="bg-white p-8 rounded-lg shadow-lg text-left">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Full Name</label>
+                        <input type="text" id="name" name="entry.616690200" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2">Confirmation</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="attend-matrimony" name="entry.1506893492" value="Yes, I will attend the Holy Matrimony" checked class="mr-2 h-4 w-4">
+                                <label for="attend-matrimony">Yes, I will attend the Holy Matrimony</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="attend-reception" name="entry.1506893492" value="Yes, I will attend the Reception" class="mr-2 h-4 w-4">
+                                <label for="attend-reception">Yes, I will attend the Reception</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="attend-both" name="entry.1506893492" value="Yes, I will attend both sessions" class="mr-2 h-4 w-4">
+                                <label for="attend-both">Yes, I will attend both sessions</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="not-attending-confirm" name="entry.1506893492" value="Sorry, I can't attend, may our prayers be with you" class="mr-2 h-4 w-4">
+                                <label for="not-attending-confirm">Sorry, I can't attend</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">Number of Guests Attending</label>
+                         <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="radio" id="guests-1" name="entry.1879301541" value="1 person" checked class="mr-2 h-4 w-4">
+                                <label for="guests-1">1 Person</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="guests-2" name="entry.1879301541" value="2 people" class="mr-2 h-4 w-4">
+                                <label for="guests-2">2 People</label>
+                            </div>
+                             <div class="flex items-center">
+                                <input type="radio" id="guests-0" name="entry.1879301541" value="Sorry, I can't attend, may our prayers be with you" class="mr-2 h-4 w-4">
+                                <label for="guests-0">Not Attending</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ✨ GEMINI API FEATURE: WISH GENERATOR (INTEGRATED INTO FORM) -->
+                    <div class="mb-6 mt-6 border-t border-gray-200 pt-6">
+                        <label for="ai-wish-output" class="block text-gray-700 font-bold mb-2">Leave a Wish for the Couple</label>
+                         <p class="text-gray-600 text-sm mb-3">Feel free to write your own message, or let our AI assistant help you craft the perfect one!</p>
+                        <textarea id="ai-wish-output" name="entry.472063576" class="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your heartfelt wish..."></textarea>
+                        <div id="wish-loader" class="hidden my-4 text-center">
+                             <div class="spinner"></div>
+                             <p class="text-gray-600 mt-2">Generating your heartfelt message...</p>
+                        </div>
+                        <button type="button" id="generate-wish-btn" class="w-full mt-3 bg-amber-700 text-white font-bold py-2 px-4 rounded-md hover:bg-amber-800 transition-colors duration-300 flex items-center justify-center gap-2">
+                            ✨ Generate Wish with AI
+                        </button>
+                    </div>
+
+                    <button type="submit" class="w-full bg-amber-800 text-white font-bold py-3 px-4 rounded-md hover:bg-amber-900 transition-colors duration-300">
+                        SEND RSVP
+                    </button>
+                </form>
+                <div id="thank-you-message" class="hidden mt-8 text-lg text-green-700 bg-green-100 p-4 rounded-lg">
+                    Thank you for your response!
+                </div>
+            </div>
+        </section>
+        
+        <!-- 6. Digital Gifts -->
+        <section id="gifts" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-4 max-w-2xl text-center">
+                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Wedding Gift</h2>
+                <p class="text-gray-600 mb-8">Your presence at our wedding is the greatest gift of all. However, should you wish to honour us with a gift, a contribution to our wishing well would be warmly appreciated.</p>
+                <div class="bg-white p-8 rounded-lg shadow-lg inline-block">
+                    <p class="font-bold text-lg mb-4">For Digital Gifts</p>
+                    <img src="https://placehold.co/300x300/e2e8f0/334155?text=QRIS+Barcode" alt="QRIS Barcode" class="mx-auto w-64 h-64">
+                    <p class="mt-4 text-gray-600">Scan with your favorite e-wallet app.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-12 bg-amber-900 text-white">
+        <p class="text-xl font-serif">Thank you</p>
+        <h3 class="text-4xl font-serif my-2">
+            Raldy & Angelica
+        </h3>
+    </footer>
+
+    <!-- Modal for Dress Code Advice -->
+    <div id="dress-code-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full relative">
+            <button id="close-modal-btn" class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            <h3 class="text-3xl font-serif text-amber-900 mb-4">Dress Code Guide</h3>
+            <div id="dress-code-loader" class="text-center hidden">
+                <div class="spinner"></div>
+                <p class="text-gray-600 mt-2">Getting fashion advice...</p>
+            </div>
+            <div id="dress-code-output" class="text-gray-700 mt-4 space-y-3 text-left max-h-[60vh] overflow-y-auto">
+                <!-- AI generated content goes here -->
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Countdown Timer Logic
+        const countDownDate = new Date("Nov 15, 2025 10:00:00").getTime();
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "<div class='text-center text-2xl font-serif text-amber-900'>The big day is here!</div>";
+            }
+        }, 1000);
+
+        // RSVP Form submission message
+        const rsvpForm = document.getElementById('rsvp-form');
+        rsvpForm.addEventListener('submit', function() {
+            setTimeout(() => {
+                rsvpForm.style.display = 'none';
+                document.getElementById('thank-you-message').style.display = 'block';
+            }, 100);
+        });
+
+        // ===================================================================
+        // ✨ Gemini API Integration ✨
+        // ===================================================================
+        const API_KEY = ""; // NOTE: An API key will be automatically provided in the execution environment.
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+
+        // Generic function to call the Gemini API
+        async function callGeminiApi(prompt, loaderElement, outputElement, buttonElement) {
+            loaderElement.style.display = 'block';
+            if(outputElement.tagName === 'TEXTAREA') outputElement.value = '';
+            else outputElement.innerHTML = '';
+            
+            if (buttonElement) buttonElement.disabled = true;
+
+            try {
+                const payload = { contents: [{ parts: [{ text: prompt }] }] };
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const text = candidate.content.parts[0].text;
+                    if(outputElement.tagName === 'TEXTAREA') outputElement.value = text.trim();
+                    else outputElement.innerHTML = text.trim().replace(/\n/g, '<br>');
+                } else {
+                    throw new Error("Unexpected response format from API.");
+                }
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                const errorMessage = "Sorry, we couldn't generate a response right now. Please try again later.";
+                if(outputElement.tagName === 'TEXTAREA') outputElement.value = errorMessage;
+                else outputElement.innerHTML = errorMessage;
+            } finally {
+                loaderElement.style.display = 'none';
+                if (buttonElement) buttonElement.disabled = false;
+            }
+        }
+
+        // AI Wish Generator Logic
+        const generateWishBtn = document.getElementById('generate-wish-btn');
+        const aiWishOutput = document.getElementById('ai-wish-output');
+        const wishLoader = document.getElementById('wish-loader');
+
+        generateWishBtn.addEventListener('click', () => {
+            const coupleNames = "Raldy & Angelica"; 
+            const prompt = `Write a warm, unique, and heartfelt wedding wish for ${coupleNames}. The wish should be celebratory and personal in tone. Keep it concise, under 50 words. Do not use hashtags.`;
+            callGeminiApi(prompt, wishLoader, aiWishOutput, generateWishBtn);
+        });
+
+        // Dress Code Advisor Logic
+        const dressCodeBtn = document.getElementById('dress-code-btn');
+        const dressCodeModal = document.getElementById('dress-code-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const dressCodeLoader = document.getElementById('dress-code-loader');
+        const dressCodeOutput = document.getElementById('dress-code-output');
+
+        dressCodeBtn.addEventListener('click', () => {
+            dressCodeModal.style.display = 'flex';
+            dressCodeOutput.innerHTML = '';
+            dressCodeLoader.style.display = 'block';
+
+            const dressCode = "Formal Attire";
+            const city = "Jakarta, Indonesia";
+            const month = "November";
+            const prompt = `The dress code for a wedding is "${dressCode}". The wedding is in ${city} in ${month}. Provide simple, clear, and practical outfit suggestions for both men and women. Explain what "${dressCode}" means in this context. Format the response with clear headings (e.g., **For Women**, **For Men**).`;
+            
+            callGeminiApi(prompt, dressCodeLoader, dressCodeOutput, dressCodeBtn);
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            dressCodeModal.style.display = 'none';
+        });
+
+        dressCodeModal.addEventListener('click', (event) => {
+            if (event.target === dressCodeModal) {
+                dressCodeModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
