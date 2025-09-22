@@ -332,7 +332,6 @@
 
     <!-- Background Music Player -->
     <audio id="background-music" loop>
-        <!-- EDIT THIS: Replace with your song's URL -->
         <source src="https://res.cloudinary.com/drmpxikjj/video/upload/v1758509115/WILD_All_My_Life_Official_Music_Video_vjkwxd.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -382,6 +381,21 @@
 
         // Set a pleasant volume, not too loud
         backgroundMusic.volume = 0.3;
+
+        // Try to autoplay music on page load
+        window.addEventListener('load', () => {
+            const playPromise = backgroundMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay started successfully. Update icon.
+                    musicIcon.classList.remove('fa-music');
+                    musicIcon.classList.add('fa-pause');
+                }).catch(error => {
+                    // Autoplay was prevented by the browser. Icon remains as 'play'.
+                    console.log("Music autoplay was prevented by the browser.");
+                });
+            }
+        });
 
         musicToggle.addEventListener('click', () => {
             if (backgroundMusic.paused) {
