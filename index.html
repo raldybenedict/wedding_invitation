@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wedding of Raldy Benedict & Angelica Libriana Soewito</title>
     
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -20,13 +21,13 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F8F5F2; /* Soft beige background */
+            background-color: #FDFBF6; /* A warmer, more elegant off-white */
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
         }
         .text-shadow {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
         /* Style for the background video */
         #bg-video {
@@ -38,8 +39,8 @@
             width: auto;
             height: auto;
             z-index: -100;
-            object-fit: cover; /* Cover the entire screen */
-            filter: brightness(1); /* Darken the video to make text readable */
+            object-fit: cover;
+            filter: brightness(0.8); /* Slightly dim the video */
         }
         /* Add a subtle overlay */
         .overlay {
@@ -65,8 +66,8 @@
             border-radius: 50%;
             width: 24px;
             height: 24px;
-            border: 3px solid rgba(200,200,200,0.3);
-            border-top-color: #78350f; /* amber-900 */
+            border: 3px solid rgba(161, 138, 91, 0.2); /* Soft gold */
+            border-top-color: #a18a5b; /* Gold color */
         }
         @keyframes spin {
             to { transform: rotate(360deg); }
@@ -77,8 +78,8 @@
             bottom: 20px;
             right: 20px;
             z-index: 1000;
-            background-color: rgba(120, 53, 15, 0.8); /* amber-900 with transparency */
-            color: white;
+            background-color: rgba(74, 66, 56, 0.8); /* Dark brown with transparency */
+            color: #FDFBF6;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -92,6 +93,28 @@
         .music-toggle-btn:hover {
             transform: scale(1.1);
         }
+        
+        /* New Luxury Styles */
+        .frame-section {
+            position: relative;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(161, 138, 91, 0.3);
+            border-bottom: 1px solid rgba(161, 138, 91, 0.3);
+            margin-top: -1px; /* Prevents double borders */
+        }
+
+        .gold-text { color: #a18a5b; }
+        .dark-brown-text { color: #4a4238; }
+        .dark-brown-bg { background-color: #4a4238; }
+        
+        .btn-gold {
+            background-color: #a18a5b;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #8a734b;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -102,229 +125,244 @@
         Your browser does not support the video tag.
     </video>
 
-    <!-- Hero Section -->
-    <header class="relative bg-white/50 min-h-screen flex flex-col items-center justify-center text-white text-center p-4">
-        <div class="overlay"></div>
-        <div class="relative z-10 fade-in">
-            <h3 class="text-2xl md:text-3xl font-light tracking-wider">THE WEDDING OF</h3>
-            <h1 class="text-6xl md:text-8xl lg:text-9xl my-4 font-serif text-shadow">
-                Benedict & Angelica
-            </h1>
-            <p class="text-xl md:text-2xl">
-                We are Getting Married!
-            </p>
-            <div class="mt-8 border-t border-b border-white/50 py-4 px-8 inline-block">
-                <!-- EDIT DATE -->
-                <p class="text-2xl tracking-widest">10.11.2025</p>
-            </div>
-        </div>
-    </header>
-
-    <main class="relative bg-white/80 backdrop-blur-sm z-10">
-        <!-- Countdown Section -->
-        <section class="py-20 text-center bg-stone-100 bg-opacity-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Counting Down The Days</h2>
-                <div id="countdown" class="flex justify-center space-x-4 md:space-x-8 mt-8 text-amber-800">
-                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
-                        <span id="days" class="text-4xl font-bold">00</span>
-                        <span class="block text-sm">Days</span>
-                    </div>
-                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
-                        <span id="hours" class="text-4xl font-bold">00</span>
-                        <span class="block text-sm">Hours</span>
-                    </div>
-                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
-                        <span id="minutes" class="text-4xl font-bold">00</span>
-                        <span class="block text-sm">Minutes</span>
-                    </div>
-                    <div class="text-center p-4 bg-white rounded-lg shadow-lg w-24">
-                        <span id="seconds" class="text-4xl font-bold">00</span>
-                        <span class="block text-sm">Seconds</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Opening Greeting -->
-        <section class="py-20 text-center">
-            <div class="container mx-auto px-6 max-w-3xl">
-                <h3 class="text-3xl font-serif italic text-gray-600 mb-6">"And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</h3>
-                <p class="text-lg text-gray-500">(Ar-Rum: 21)</p>
-            </div>
-        </section>
-
-        <!-- 2. Prewedding Photos -->
-        <section id="gallery" class="py-20 bg-stone-100 bg-opacity-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-serif text-center text-amber-900 mb-12">Our Moments</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/Xq1rfnw7/RED_9703.jpg" alt="Prewedding Photo 1" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
-                    <div class="overflow-hidden rounded-lg shadow-lg col-span-1 md:col-span-2"><img src="https://i.postimg.cc/BbVr5ztG/RED-0634-2.jpg" alt="Prewedding Photo 2" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
-                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/JhL9QZ7t/RED-0718.jpg" alt="Prewedding Photo 3" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
-                    <div class="overflow-hidden rounded-lg shadow-lg col-span-1 md:col-span-2"><img src="https://i.postimg.cc/brhT7HM2/RED_1338-2.jpg" alt="Prewedding Photo 4" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
-                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/3rX9gV4j/RED_1574.jpg" alt="Prewedding Photo 5" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
-                    <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/DZMh50YD/RED_9839-2.jpg" alt="Prewedding Photo 6" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Prewedding Video -->
-        <section id="video" class="py-20">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-12">Our Story</h2>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-2xl overflow-hidden">
-                    <iframe src="https://player.vimeo.com/video/1123079338?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Location, Schedule, Google Maps -->
-        <section id="details" class="py-20 bg-stone-100 bg-opacity-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-serif text-center text-amber-900 mb-12">Event Details</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <!-- Ceremony -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                        <h3 class="text-3xl font-serif text-amber-800 mb-4">Holy Matrimony</h3>
-                        <p class="text-lg font-semibold">Saturday, 15 November 2025</p>
-                        <p class="text-gray-600 mb-4">10:00 - 12:00 WIB</p>
-                        <p class="font-bold">St Bernadet Church, Graha Raya</p>
-                        <p class="text-gray-600">Jl. Boulevard Graha Raya No.Kav.12, RT.007/RW.004, Sudimara Pinang, Kec. Pinang, Kota Tangerang, Banten 15145</p>
-                        <div class="mt-6 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2556581933063!2d106.68355057470238!3d-6.229988061011154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa2fa6d43e17%3A0xf49ef5a544f80bc0!2sGereja%20Katolik%20Paroki%20Santa%20Bernadet%2C%20Pinang!5e0!3m2!1sid!2sid!4v1758433285130!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                    <!-- Reception -->
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                        <h3 class="text-3xl font-serif text-amber-800 mb-4">Reception</h3>
-                        <p class="text-lg font-semibold">Saturday, 15 November 2025</p>
-                        <p class="text-gray-600 mb-4">18:00 - 20:00 WIB</p>
-                        <p class="font-bold">Leviticus 11</p>
-                        <p class="text-gray-600">Jl. Penyelesaian Tomang II No.1 Blok 11, Meruya Utara, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11620</p>
-                        <div class="mt-6 rounded-lg shadow-md overflow-hidden">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5073789852086!2d106.72208687470194!3d-6.196588460705639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f72147b8a23f%3A0xf98d008933f7469f!2sLeviticus%2011!5e0!3m2!1sid!2sid!4v1758432907634!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <!-- ✨ GEMINI API FEATURE: DRESS CODE ADVISOR -->
-                <div class="text-center mt-8 max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-lg font-semibold">Dress Code: Formal Attire</p>
-                    <p class="text-gray-600 text-sm mb-3">Confused about what to wear? Get some tips!</p>
-                    <button id="dress-code-btn" class="inline-block bg-amber-700 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-800 transition-colors duration-300 text-sm">
-                        ✨ Get Dress Code Advice
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 5. RSVP & AI Wish Generator -->
-        <section id="rsvp" class="py-20">
-            <div class="container mx-auto px-4 max-w-2xl text-center">
-                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Are You Attending?</h2>
-                <p class="text-gray-600 mb-8">Please RSVP by 15 October 2025 to let us know you're coming.</p>
+    <div class="border-[10px] border-[#4a4238]">
+        <!-- Hero Section -->
+        <header class="relative bg-white/50 min-h-screen flex flex-col items-center justify-center text-white text-center p-4">
+            <div class="overlay"></div>
+            <div class="relative z-10 fade-in">
+                <h3 class="text-2xl md:text-3xl font-light tracking-wider" style="color: #f5f3f0;">THE WEDDING OF</h3>
+                <h1 class="text-6xl md:text-8xl lg:text-8xl my-4 font-serif text-shadow">
+                    Benedict
+                </h1>
+                <p class="text-xl md:text-2xl">
+                    The son of  Mr. Ali Susanto Tjandra (&dagger;) & Mrs. Germini Susylanti
+                </p>
+                <h1 class="text-6xl md:text-8xl lg:text-9xl my-4 font-serif text-shadow">
+                    &
+                </h1>
+                <h1 class="text-6xl md:text-8xl lg:text-8xl my-4 font-serif text-shadow">
+                    Angelica
+                </h1>
+                 <p class="text-xl md:text-2xl">
+                    The daughter of Mr. Rusli Soewito & Mrs. Wong Pie Lan
+                </p>
                 
-                <form id="rsvp-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiAbCkVQWpGx9i7Ws1HvIYWlkpFJ9Itu6M_9-bNNBWa0xByQ/formResponse" method="POST" target="_blank" class="bg-white p-8 rounded-lg shadow-lg text-left">
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-700 font-bold mb-2">Full Name</label>
-                        <input type="text" id="name" name="entry.616690200" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                <div class="mt-8 border-t border-b border-white/50 py-4 px-8 inline-block">
+                    <!-- EDIT DATE -->
+                    <p class="text-2xl tracking-widest">10.11.2025</p>
+                </div>
+            </div>
+        </header>
+    
+        <main class="relative bg-[#FDFBF6]/95 backdrop-blur-sm z-10">
+            <!-- Countdown Section -->
+            <section class="text-center frame-section">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-serif dark-brown-text mb-4">Counting Down The Days</h2>
+                    <div id="countdown" class="flex justify-center space-x-4 md:space-x-8 mt-8">
+                        <div class="text-center p-4 bg-white/70 rounded-lg shadow-lg w-24 border border-gray-200">
+                            <span id="days" class="text-4xl font-bold gold-text">00</span>
+                            <span class="block text-sm dark-brown-text">Days</span>
+                        </div>
+                        <div class="text-center p-4 bg-white/70 rounded-lg shadow-lg w-24 border border-gray-200">
+                            <span id="hours" class="text-4xl font-bold gold-text">00</span>
+                            <span class="block text-sm dark-brown-text">Hours</span>
+                        </div>
+                        <div class="text-center p-4 bg-white/70 rounded-lg shadow-lg w-24 border border-gray-200">
+                            <span id="minutes" class="text-4xl font-bold gold-text">00</span>
+                            <span class="block text-sm dark-brown-text">Minutes</span>
+                        </div>
+                        <div class="text-center p-4 bg-white/70 rounded-lg shadow-lg w-24 border border-gray-200">
+                            <span id="seconds" class="text-4xl font-bold gold-text">00</span>
+                            <span class="block text-sm dark-brown-text">Seconds</span>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 font-bold mb-2">Confirmation</label>
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <input type="radio" id="attend-matrimony" name="entry.1506893492" value="Yes, I will attend the Holy Matrimony" checked class="mr-2 h-4 w-4">
-                                <label for="attend-matrimony">Yes, I will attend the Holy Matrimony</label>
+                </div>
+            </section>
+            
+            <!-- Opening Greeting -->
+            <section class="pt-20 pb-8 text-center">
+                <div class="container mx-auto px-6 max-w-3xl">
+                    <h3 class="text-3xl font-serif italic text-stone-600 mb-6">"And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."</h3>
+                    <p class="text-lg text-stone-500">(Ar-Rum: 21)</p>
+                </div>
+            </section>
+    
+            <!-- 3. Prewedding Video -->
+            <section id="video" class="frame-section">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h2 class="text-4xl md:text-5xl font-serif dark-brown-text mb-12">Our Story</h2>
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-2xl overflow-hidden">
+                        <iframe src="https://player.vimeo.com/video/1123079338?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+    
+    
+            <!-- 2. Prewedding Photos -->
+            <section id="gallery" class="frame-section">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-serif text-center dark-brown-text mb-12">Our Moments</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/Xq1rfnw7/RED_9703.jpg" alt="Prewedding Photo 1" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                        <div class="overflow-hidden rounded-lg shadow-lg col-span-1 md:col-span-2"><img src="https://i.postimg.cc/BbVr5ztG/RED_0634-2.jpg" alt="Prewedding Photo 2" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                        <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/JhL9QZ7t/RED_0718.jpg" alt="Prewedding Photo 3" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                        <div class="overflow-hidden rounded-lg shadow-lg col-span-1 md:col-span-2"><img src="https://i.postimg.cc/brhT7HM2/RED_1338-2.jpg" alt="Prewedding Photo 4" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                        <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/3rX9gV4j/RED_1574.jpg" alt="Prewedding Photo 5" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                        <div class="overflow-hidden rounded-lg shadow-lg"><img src="https://i.postimg.cc/DZMh50YD/RED_9839-2.jpg" alt="Prewedding Photo 6" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"></div>
+                    </div>
+                </div>
+            </section>
+    
+    
+            <!-- 4. Location, Schedule, Google Maps -->
+            <section id="details" class="frame-section">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl md:text-5xl font-serif text-center dark-brown-text mb-12">Event Details</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        <!-- Ceremony -->
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center border border-gray-200">
+                            <h3 class="text-3xl font-serif gold-text mb-4">Holy Matrimony</h3>
+                            <p class="text-lg font-semibold dark-brown-text">Saturday, 15 November 2025</p>
+                            <p class="text-stone-600 mb-4">10:00 - 12:00 WIB</p>
+                            <p class="font-bold dark-brown-text">St Bernadet Church, Graha Raya</p>
+                            <p class="text-stone-600">Jl. Boulevard Graha Raya No.Kav.12, RT.007/RW.004, Sudimara Pinang, Kec. Pinang, Kota Tangerang, Banten 15145</p>
+                            <div class="mt-6 rounded-lg shadow-md overflow-hidden">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2556581933063!2d106.68355057470238!3d-6.229988061011154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa2fa6d43e17%3A0xf49ef5a544f80bc0!2sGereja%20Katolik%20Paroki%20Santa%20Bernadet%2C%20Pinang!5e0!3m2!1sid!2sid!4v1758433285130!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="attend-reception" name="entry.1506893492" value="Yes, I will attend the Reception" class="mr-2 h-4 w-4">
-                                <label for="attend-reception">Yes, I will attend the Reception</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="attend-both" name="entry.1506893492" value="Yes, I will attend both sessions" class="mr-2 h-4 w-4">
-                                <label for="attend-both">Yes, I will attend both sessions</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="not-attending-confirm" name="entry.1506893492" value="Sorry, I can't attend, may our prayers be with you" class="mr-2 h-4 w-4">
-                                <label for="not-attending-confirm">Sorry, I can't attend</label>
+                        </div>
+                        <!-- Reception -->
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center border border-gray-200">
+                            <h3 class="text-3xl font-serif gold-text mb-4">Reception</h3>
+                            <p class="text-lg font-semibold dark-brown-text">Saturday, 15 November 2025</p>
+                            <p class="text-stone-600 mb-4">18:00 - 20:00 WIB</p>
+                            <p class="font-bold dark-brown-text">Leviticus 11</p>
+                            <p class="text-stone-600">Jl. Penyelesaian Tomang II No.1 Blok 11, Meruya Utara, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11620</p>
+                            <div class="mt-6 rounded-lg shadow-md overflow-hidden">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5073789852086!2d106.72208687470194!3d-6.196588460705639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f72147b8a23f%3A0xf98d008933f7469f!2sLeviticus%2011!5e0!3m2!1sid!2sid!4v1758432907634!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 font-bold mb-2">Number of Guests Attending</label>
-                         <div class="space-y-2">
-                            <div class="flex items-center">
-                                <input type="radio" id="guests-1" name="entry.1879301541" value="1 person" checked class="mr-2 h-4 w-4">
-                                <label for="guests-1">1 Person</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" id="guests-2" name="entry.1879301541" value="2 people" class="mr-2 h-4 w-4">
-                                <label for="guests-2">2 People</label>
-                            </div>
-                             <div class="flex items-center">
-                                <input type="radio" id="guests-0" name="entry.1879301541" value="Sorry, I can't attend, may our prayers be with you" class="mr-2 h-4 w-4">
-                                <label for="guests-0">Not Attending</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ✨ GEMINI API FEATURE: WISH GENERATOR (INTEGRATED INTO FORM) -->
-                    <div class="mb-6 mt-6 border-t border-gray-200 pt-6">
-                        <label for="ai-wish-output" class="block text-gray-700 font-bold mb-2">Leave a Wish for the Couple</label>
-                         <p class="text-gray-600 text-sm mb-3">Feel free to write your own message, or let our AI assistant help you craft the perfect one!</p>
-                        <textarea id="ai-wish-output" name="entry.472063576" class="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your heartfelt wish..."></textarea>
-                        <div id="wish-loader" class="hidden my-4 text-center">
-                             <div class="spinner"></div>
-                             <p class="text-gray-600 mt-2">Generating your heartfelt message...</p>
-                        </div>
-                        <button type="button" id="generate-wish-btn" class="w-full mt-3 bg-amber-700 text-white font-bold py-2 px-4 rounded-md hover:bg-amber-800 transition-colors duration-300 flex items-center justify-center gap-2">
-                            ✨ Generate Wish with AI
+                    <!-- ✨ GEMINI API FEATURE: DRESS CODE ADVISOR -->
+                    <div class="text-center mt-8 max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                        <p class="text-lg font-semibold dark-brown-text">Dress Code: Formal Attire</p>
+                        <p class="text-stone-600 text-sm mb-3">Confused about what to wear? Get some tips!</p>
+                        <button id="dress-code-btn" class="inline-block btn-gold font-bold py-2 px-6 rounded-full text-sm">
+                            ✨ Get Dress Code Advice
                         </button>
                     </div>
-
-                    <button type="submit" class="w-full bg-amber-800 text-white font-bold py-3 px-4 rounded-md hover:bg-amber-900 transition-colors duration-300">
-                        SEND RSVP
-                    </button>
-                </form>
-                <div id="thank-you-message" class="hidden mt-8 text-lg text-green-700 bg-green-100 p-4 rounded-lg">
-                    Thank you for your response!
                 </div>
-            </div>
-        </section>
-        
-        <!-- 6. Digital Gifts -->
-        <section id="gifts" class="py-20 bg-stone-100 bg-opacity-50">
-            <div class="container mx-auto px-4 max-w-2xl text-center">
-                <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Wedding Gift</h2>
-                <p class="text-gray-600 mb-8">Your presence at our wedding is the greatest gift of all. However, should you wish to honour us with a gift, a contribution to our wishing well would be warmly appreciated.</p>
-                <div class="bg-white p-8 rounded-lg shadow-lg inline-block">
-                    <p class="font-bold text-lg mb-4">For Digital Gifts</p>
-                    <img src="https://placehold.co/300x300/e2e8f0/334155?text=QRIS+Barcode" alt="QRIS Barcode" class="mx-auto w-64 h-64">
-                    <p class="mt-4 text-gray-600">Scan with your favorite e-wallet app.</p>
-                    <p class="mt-4 text-gray-600">BCA 4830318041 (Raldy Benedict).</p>
-                    <p class="mt-4 text-gray-600">BCA 6041074415 (Angelica Libriana Soewito).</p>
+            </section>
+            
+            <!-- 5. RSVP & AI Wish Generator -->
+            <section id="rsvp" class="py-20">
+                <div class="container mx-auto px-4 max-w-2xl text-center">
+                    <h2 class="text-4xl md:text-5xl font-serif dark-brown-text mb-4">Are You Attending?</h2>
+                    <p class="text-stone-600 mb-8">Please RSVP by 15 October 2025 to let us know you're coming.</p>
+                    
+                    <form id="rsvp-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiAbCkVQWpGx9i7Ws1HvIYWlkpFJ9Itu6M_9-bNNBWa0xByQ/formResponse" method="POST" target="_blank" class="bg-white p-8 rounded-lg shadow-lg text-left border border-gray-200">
+                        <div class="mb-4">
+                            <label for="name" class="block dark-brown-text font-bold mb-2">Full Name</label>
+                            <input type="text" id="name" name="entry.616690200" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#a18a5b]">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block dark-brown-text font-bold mb-2">Confirmation</label>
+                            <div class="space-y-2 text-stone-700">
+                                <div class="flex items-center">
+                                    <input type="radio" id="attend-matrimony" name="entry.1506893492" value="Yes, I will attend the Holy Matrimony" checked class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="attend-matrimony">Yes, I will attend the Holy Matrimony</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="attend-reception" name="entry.1506893492" value="Yes, I will attend the Reception" class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="attend-reception">Yes, I will attend the Reception</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="attend-both" name="entry.1506893492" value="Yes, I will attend both sessions" class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="attend-both">Yes, I will attend both sessions</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="not-attending-confirm" name="entry.1506893492" value="Sorry, I can't attend, may our prayers be with you" class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="not-attending-confirm">Sorry, I can't attend</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block dark-brown-text font-bold mb-2">Number of Guests Attending</label>
+                             <div class="space-y-2 text-stone-700">
+                                <div class="flex items-center">
+                                    <input type="radio" id="guests-1" name="entry.1879301541" value="1 person" checked class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="guests-1">1 Person</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="guests-2" name="entry.1879301541" value="2 people" class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="guests-2">2 People</label>
+                                </div>
+                                 <div class="flex items-center">
+                                    <input type="radio" id="guests-0" name="entry.1879301541" value="Sorry, I can't attend, may our prayers be with you" class="mr-2 h-4 w-4 text-[#a18a5b] focus:ring-[#a18a5b]">
+                                    <label for="guests-0">Not Attending</label>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- ✨ GEMINI API FEATURE: WISH GENERATOR (INTEGRATED INTO FORM) -->
+                        <div class="mb-6 mt-6 border-t border-gray-200 pt-6">
+                            <label for="ai-wish-output" class="block dark-brown-text font-bold mb-2">Leave a Wish for the Couple</label>
+                             <p class="text-stone-600 text-sm mb-3">Feel free to write your own message, or let our AI assistant help you craft the perfect one!</p>
+                            <textarea id="ai-wish-output" name="entry.472063576" class="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#a18a5b]" placeholder="Your heartfelt wish..."></textarea>
+                            <div id="wish-loader" class="hidden my-4 text-center">
+                                 <div class="spinner"></div>
+                                 <p class="text-stone-600 mt-2">Generating your heartfelt message...</p>
+                            </div>
+                            <button type="button" id="generate-wish-btn" class="w-full mt-3 btn-gold font-bold py-2 px-4 rounded-md flex items-center justify-center gap-2">
+                                ✨ Generate Wish with AI
+                            </button>
+                        </div>
+    
+                        <button type="submit" class="w-full dark-brown-bg text-white font-bold py-3 px-4 rounded-md hover:bg-opacity-90 transition-colors duration-300">
+                            SEND RSVP
+                        </button>
+                    </form>
+                    <div id="thank-you-message" class="hidden mt-8 text-lg text-green-800 bg-green-100 p-4 rounded-lg">
+                        Thank you for your response!
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+            
+            <!-- 6. Digital Gifts -->
+            <section id="gifts" class="frame-section">
+                <div class="container mx-auto px-4 max-w-2xl text-center">
+                    <h2 class="text-4xl md:text-5xl font-serif dark-brown-text mb-4">Wedding Gift</h2>
+                    <p class="text-stone-600 mb-8">Your presence at our wedding is the greatest gift of all. However, should you wish to honour us with a gift, a contribution to our wishing well would be warmly appreciated.</p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg inline-block border border-gray-200">
+                        <p class="font-bold text-lg mb-4 dark-brown-text">For Digital Gifts</p>
+                        <img src="https://placehold.co/300x300/e2e8f0/334155?text=QRIS+Barcode" alt="QRIS Barcode" class="mx-auto w-64 h-64">
+                        <p class="mt-4 text-stone-600">Scan with your favorite e-wallet app.</p>
+                        <p class="mt-4 text-stone-600">BCA 4830318041 (Raldy Benedict).</p>
+                        <p class="mt-4 text-stone-600">BCA 6041074415 (Angelica Libriana Soewito).</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <footer class="text-center py-12 dark-brown-bg text-white">
+            <p class="text-xl font-serif">Thank you</p>
+            <h3 class="text-4xl font-serif my-2">
+                Raldy & Angelica
+            </h3>
+        </footer>
+    </div>
 
-    <footer class="text-center py-12 bg-amber-900 text-white">
-        <p class="text-xl font-serif">Thank you</p>
-        <h3 class="text-4xl font-serif my-2">
-            Raldy & Angelica
-        </h3>
-    </footer>
 
     <!-- Modal for Dress Code Advice -->
     <div id="dress-code-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 transition-opacity duration-300">
-        <div class="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full relative">
+        <div class="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full relative border-t-4 border-[#a18a5b]">
             <button id="close-modal-btn" class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
-            <h3 class="text-3xl font-serif text-amber-900 mb-4">Dress Code Guide</h3>
+            <h3 class="text-3xl font-serif gold-text mb-4">Dress Code Guide</h3>
             <div id="dress-code-loader" class="text-center hidden">
                 <div class="spinner"></div>
-                <p class="text-gray-600 mt-2">Getting fashion advice...</p>
+                <p class="text-stone-600 mt-2">Getting fashion advice...</p>
             </div>
-            <div id="dress-code-output" class="text-gray-700 mt-4 space-y-3 text-left max-h-[60vh] overflow-y-auto">
+            <div id="dress-code-output" class="text-stone-700 mt-4 space-y-3 text-left max-h-[60vh] overflow-y-auto">
                 <!-- AI generated content goes here -->
             </div>
         </div>
@@ -361,7 +399,7 @@
 
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                document.getElementById("countdown").innerHTML = "<div class='text-center text-2xl font-serif text-amber-900'>The big day is here!</div>";
+                document.getElementById("countdown").innerHTML = "<div class='text-center text-2xl font-serif gold-text'>The big day is here!</div>";
             }
         }, 1000);
 
@@ -498,5 +536,4 @@
     </script>
 </body>
 </html>
-
 
