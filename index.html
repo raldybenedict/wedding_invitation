@@ -218,14 +218,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ✨ GEMINI API FEATURE: DRESS CODE ADVISOR -->
-                    <div class="text-center mt-8 max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-lg font-semibold">Dress Code: Formal Attire</p>
-                        <p class="text-gray-600 text-sm mb-3">Confused about what to wear? Get some tips!</p>
-                        <button id="dress-code-btn" type="button" class="inline-block bg-amber-700 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-800 transition-colors duration-300 text-sm">
-                            ✨ Get Dress Code Advice
-                        </button>
-                    </div>
                 </div>
             </section>
             
@@ -286,12 +278,12 @@
                                 </div>
                             </div>
                         </div>
-        
+    
                         <!-- ✨ GEMINI API FEATURE: WISH GENERATOR (INTEGRATED INTO FORM) -->
                         <div class="mb-6 mt-6 border-t border-gray-200 pt-6">
                             <label for="ai-wish-output" class="block text-gray-700 font-bold mb-2">Leave a Wish for the Couple</label>
                              <p class="text-gray-600 text-sm mb-3">Feel free to write your own message, or let our AI assistant help you craft the perfect one!</p>
-                            <textarea id="ai-wish-output" name="entry.472063576" class="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your heartfelt wish..."></textarea>
+                            <textarea id="ai-wish-output" name="entry.59463875" class="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your heartfelt wish..."></textarea>
                             <div id="wish-loader" class="hidden my-4 text-center">
                                  <div class="spinner"></div>
                                  <p class="text-gray-600 mt-2">Generating your heartfelt message...</p>
@@ -334,22 +326,6 @@
                 ~Raldy & Angelica~
             </h3>
         </footer>
-    </div>
-
-
-    <!-- Modal for Dress Code Advice -->
-    <div id="dress-code-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 transition-opacity duration-300">
-        <div class="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full relative">
-            <button id="close-modal-btn" class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
-            <h3 class="text-3xl font-serif text-amber-900 mb-4">Dress Code Guide</h3>
-            <div id="dress-code-loader" class="text-center hidden">
-                <div class="spinner"></div>
-                <p class="text-gray-600 mt-2">Getting fashion advice...</p>
-            </div>
-            <div id="dress-code-output" class="text-gray-700 mt-4 space-y-3 text-left max-h-[60vh] overflow-y-auto">
-                <!-- AI generated content goes here -->
-            </div>
-        </div>
     </div>
 
     <script>
@@ -483,40 +459,11 @@
         const aiWishOutput = document.getElementById('ai-wish-output');
         const wishLoader = document.getElementById('wish-loader');
 
-        generateWishBtn.addEventListener('click', () => {
+        generateWishBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default button behavior, especially on mobile
             const coupleNames = "Raldy & Angelica"; 
             const prompt = `Write a warm, unique, and heartfelt wedding wish for ${coupleNames}. The wish should be celebratory and personal in tone. Keep it concise, under 50 words. Do not use hashtags.`;
             callGeminiApi(prompt, wishLoader, aiWishOutput, generateWishBtn);
-        });
-
-        // Dress Code Advisor Logic
-        const dressCodeBtn = document.getElementById('dress-code-btn');
-        const dressCodeModal = document.getElementById('dress-code-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const dressCodeLoader = document.getElementById('dress-code-loader');
-        const dressCodeOutput = document.getElementById('dress-code-output');
-
-        dressCodeBtn.addEventListener('click', () => {
-            dressCodeModal.style.display = 'flex';
-            dressCodeOutput.innerHTML = '';
-            dressCodeLoader.style.display = 'block';
-
-            const dressCode = "Formal Attire";
-            const city = "Jakarta, Indonesia";
-            const month = "November";
-            const prompt = `The dress code for a wedding is "${dressCode}". The wedding is in ${city} in ${month}. Provide simple, clear, and practical outfit suggestions for both men and women. Explain what "${dressCode}" means in this context. Format the response with clear headings (e.g., **For Women**, **For Men**).`;
-            
-            callGeminiApi(prompt, dressCodeLoader, dressCodeOutput, dressCodeBtn);
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            dressCodeModal.style.display = 'none';
-        });
-
-        dressCodeModal.addEventListener('click', (event) => {
-            if (event.target === dressCodeModal) {
-                dressCodeModal.style.display = 'none';
-            }
         });
     </script>
 </body>
