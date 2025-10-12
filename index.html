@@ -286,7 +286,7 @@
                                 </div>
                             </div>
                         </div>
-    
+        
                         <!-- ✨ GEMINI API FEATURE: WISH GENERATOR (INTEGRATED INTO FORM) -->
                         <div class="mb-6 mt-6 border-t border-gray-200 pt-6">
                             <label for="ai-wish-output" class="block text-gray-700 font-bold mb-2">Leave a Wish for the Couple</label>
@@ -433,9 +433,9 @@
         // ===================================================================
         // ✨ Gemini API Integration ✨
         // ===================================================================
-        const API_KEY = ""; // NOTE: An API key will be automatically provided in the execution environment.
+        const API_KEY = ""; // This will be automatically provided by the execution environment.
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
-
+        
         // Generic function to call the Gemini API
         async function callGeminiApi(prompt, loaderElement, outputElement, buttonElement) {
             loaderElement.style.display = 'block';
