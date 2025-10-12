@@ -235,10 +235,18 @@
                     <h2 class="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Are You Attending?</h2>
                     <p class="text-gray-600 mb-8">Please RSVP by 15 October 2025 to let us know you're coming.</p>
                     
-                    <form id="rsvp-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiAbCkVQWpGx9i7Ws1HvIYWlkpFJ9Itu6M_9-bNNBWa0xByQ/formResponse" method="POST" target="_blank" class="bg-white p-8 rounded-lg shadow-lg text-left">
+                    <form id="rsvp-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiAbCkVQWpGx9i7Ws1HvIYWlkpFJ9Itu6M_9-bNNBWa0xByQ/formResponse" method="POST">
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 font-bold mb-2">Full Name</label>
                             <input type="text" id="name" name="entry.616690200" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email Address</label>
+                            <input type="email" id="email" name="emailAddress" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-bold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="entry.533152110" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 font-bold mb-2">Confirmation</label>
@@ -352,13 +360,13 @@
         const preweddingVideoPlayer = document.getElementById('prewedding-video-player');
 
         openButton.addEventListener('click', () => {
-            // Unmute and play the main background video
-            backgroundVideo.muted = false;
+             // Set the main background video to play, but keep it muted.
+            backgroundVideo.muted = true;
             backgroundVideo.play().catch(error => {
-                console.log("Browser prevented background video from playing with sound:", error);
+                console.log("Browser prevented background video from playing:", error);
             });
 
-            // Dynamically set the prewedding iframe src to trigger its autoplay
+            // Dynamically set the prewedding iframe src to trigger its autoplay with sound
             if (preweddingVideoPlayer) {
                 preweddingVideoPlayer.src = preweddingVideoPlayer.dataset.src;
             }
@@ -399,13 +407,26 @@
             }
         }, 1000);
 
-        // RSVP Form submission message
+        // RSVP Form submission logic for background submission
         const rsvpForm = document.getElementById('rsvp-form');
-        rsvpForm.addEventListener('submit', function() {
-            setTimeout(() => {
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default redirect
+
+            const formData = new FormData(rsvpForm);
+            const actionUrl = rsvpForm.action;
+
+            fetch(actionUrl, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Important for submitting to Google Forms without errors
+            }).then(() => {
+                // This block runs after the data is sent
                 rsvpForm.style.display = 'none';
                 document.getElementById('thank-you-message').style.display = 'block';
-            }, 100);
+            }).catch(error => {
+                console.error('Error submitting form:', error);
+                alert('There was an error submitting your RSVP. Please try again.');
+            });
         });
 
         // ===================================================================
@@ -496,5 +517,4 @@
     </script>
 </body>
 </html>
-
 
