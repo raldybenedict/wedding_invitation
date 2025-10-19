@@ -74,7 +74,10 @@
     </style>
 </head>
 <body class="text-gray-800">
-
+    <audio id="background-music" loop>
+        <source src="https://res.cloudinary.com/drmpxikjj/video/upload/v1758509115/WILD_All_My_Life_Official_Music_Video_vjkwxd.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <!-- Invitation Cover -->
     <div id="invitation-cover" class="fixed inset-0 bg-cover bg-center z-50 flex flex-col items-center justify-center text-center p-4 transition-opacity duration-1000 ease-in-out" style="background-image: url('https://res.cloudinary.com/drmpxikjj/image/upload/v1760244322/RED_1125-2_aaxpue.jpg');">
         <div class="absolute inset-0 bg-black/50"></div>
@@ -92,7 +95,7 @@
 
     <div id="main-content" class="opacity-0 transition-opacity duration-1000 ease-in-out">
         <!-- 1. Background Video (will remain muted) -->
-        <video autoplay muted loop id="bg-video">
+        <video autoplay muted loop playsinline id="bg-video">
             <source src="https://res.cloudinary.com/drmpxikjj/video/upload/Wedding_Video_By_Ola_Vfinal_fqcrs7.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -157,11 +160,12 @@
                         <iframe
                             id="prewedding-video-player"
                             src=""
-                            data-src="https://player.cloudinary.com/embed/?cloud_name=drmpxikjj&public_id=Raldy_Angelica_gicez1&player[autoplay]=true&player[muted]=false"
+                            data-src="https://player.cloudinary.com/embed/?cloud_name=drmpxikjj&public_id=Raldy_Angelica_gicez1&player[autoplay]=true&player[muted]=true&player[playsinline]=true&player[controls]=false"
                             width="640"
                             height="360" 
                             style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
                             allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                            playsinline
                             allowfullscreen
                             frameborder="0"
                         ></iframe>
@@ -330,6 +334,7 @@
         const mainContent = document.getElementById('main-content');
         const backgroundVideo = document.getElementById('bg-video');
         const preweddingVideoPlayer = document.getElementById('prewedding-video-player');
+        const backgroundMusic = document.getElementById('background-music'); // Get the audio element
 
         openButton.addEventListener('click', () => {
              // Set the main background video to play, but keep it muted.
@@ -409,6 +414,7 @@
     </script>
 </body>
 </html>
+
 
 
 
