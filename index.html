@@ -337,6 +337,11 @@
         const backgroundMusic = document.getElementById('background-music'); // Get the audio element
 
         openButton.addEventListener('click', () => {
+             // Play background music - MODIFIED HERE
+            backgroundMusic.play().catch(error => {
+                console.log("Browser prevented background music from playing:", error);
+            });
+            
              // Set the main background video to play, but keep it muted.
             backgroundVideo.muted = true;
             backgroundVideo.play().catch(error => {
@@ -414,6 +419,7 @@
     </script>
 </body>
 </html>
+
 
 
 
